@@ -1,1 +1,568 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiatives pour l'Environnement et les Droits Humains</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c786c;
+            --secondary-color: #004445;
+            --accent-color: #f8b400;
+            --light-color: #faf5e4;
+            --dark-color: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 68, 69, 0.8), rgba(0, 68, 69, 0.8)), 
+                        url('https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .initiative-card {
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .initiative-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .initiative-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(44, 120, 108, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-leaf me-2"></i>EcoDroits
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#programmes">Programmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#droits">Droits Humains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sensibilisation">Sensibilisation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Engagement pour la Planète et l'Humanité</h1>
+            <p class="lead mb-5">Reboisement, protection de la biodiversité, soutien juridique et éducation environnementale</p>
+            <a href="#programmes" class="btn btn-primary btn-lg px-4 me-2">Nos Programmes</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Nous Contacter</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+        <!-- Overview Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center p-4">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Reboisement</h3>
+                    <p>Projets de reforestation à grande échelle avec les communautés locales</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center p-4">
+                    <div class="card-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Soutien Juridique</h3>
+                    <p>Aide aux victimes de violations des droits humains</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center p-4">
+                    <div class="card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Formations</h3>
+                    <p>Sensibilisations environnementales pour tous publics</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center p-4">
+                    <div class="card-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Campagnes</h3>
+                    <p>Programmes éducatifs et campagnes de communication</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programmes de conservation -->
+        <section id="programmes" class="mb-5">
+            <h2 class="section-title">Programmes de conservation</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card initiative-card p-4">
+                        <h3><i class="fas fa-tree me-2"></i> Reforestation</h3>
+                        <ul class="list-unstyled">
+                            <li class="initiative-item">Organisation de projets de reforestation à grande échelle en collaboration avec les communautés locales</li>
+                            <li class="initiative-item">Sélection d'espèces indigènes adaptées aux écosystèmes locaux</li>
+                            <li class="initiative-item">Suivi de la croissance et de la survie des plants</li>
+                            <li class="initiative-item">Initiatives d'éducation à l'importance des forêts</li>
+                            <li class="initiative-item">Prévention de la déforestation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card initiative-card p-4">
+                        <h3><i class="fas fa-paw me-2"></i> Protection des espèces</h3>
+                        <ul class="list-unstyled">
+                            <li class="initiative-item">Programmes de protection des espèces menacées</li>
+                            <li class="initiative-item">Surveillance des populations et lutte contre le braconnage</li>
+                            <li class="initiative-item">Collaboration avec les autorités pour des patrouilles efficaces</li>
+                            <li class="initiative-item">Création de sanctuaires et corridors écologiques</li>
+                            <li class="initiative-item">Programmes de reproduction en captivité et réintroduction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card initiative-card p-4">
+                        <h3><i class="fas fa-leaf me-2"></i> Restauration d'habitats</h3>
+                        <ul class="list-unstyled">
+                            <li class="initiative-item">Restauration des habitats naturels dégradés (zones humides, mangroves, récifs coralliens)</li>
+                            <li class="initiative-item">Techniques de restauration écologique éprouvées</li>
+                            <li class="initiative-item">Implication des communautés riveraines</li>
+                            <li class="initiative-item">Réalisation d'études d'impact environnemental</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card initiative-card p-4">
+                        <h3><i class="fas fa-search me-2"></i> Recherche scientifique</h3>
+                        <ul class="list-unstyled">
+                            <li class="initiative-item">Recherches sur la biodiversité locale</li>
+                            <li class="initiative-item">Étude de la distribution des espèces et leur état de conservation</li>
+                            <li class="initiative-item">Analyse des menaces pour la biodiversité</li>
+                            <li class="initiative-item">Base scientifique solide pour les actions de conservation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Défense des droits humains -->
+        <section id="droits" class="mb-5">
+            <h2 class="section-title">Défense des droits humains</h2>
+            
+            <div class="accordion" id="droitsAccordion">
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            <i class="fas fa-bullhorn me-2"></i> Campagnes de sensibilisation
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#droitsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Campagnes à grande échelle sur les droits des femmes, des enfants, des minorités et des réfugiés</li>
+                                <li>Utilisation de divers supports médiatiques pour une large diffusion</li>
+                                <li>Organisation d'événements communautaires pour un impact local</li>
+                                <li>Création de matériel éducatif accessible à tous</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            <i class="fas fa-balance-scale me-2"></i> Soutien juridique
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#droitsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Offre de soutien juridique gratuit aux victimes de violations</li>
+                                <li>Information des victimes sur leurs droits et recours possibles</li>
+                                <li>Aide au dépôt de plainte et représentation devant les tribunaux</li>
+                                <li>Partenariats avec des cabinets d'avocats et organisations juridiques</li>
+                                <li>Accompagnement tout au long des procédures judiciaires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h3 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            <i class="fas fa-heart me-2"></i> Soutien psychologique
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#droitsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Centres d'écoute pour les personnes traumatisées</li>
+                                <li>Espace sûr et confidentiel pour la guérison</li>
+                                <li>Soutien psychologique professionnel</li>
+                                <li>Programmes de reconstruction personnelle</li>
+                                <li>Groupes de parole et thérapies adaptées</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h3 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            <i class="fas fa-graduation-cap me-2"></i> Formations
+                        </button>
+                    </h3>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#droitsAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Formations sur les droits humains pour divers publics</li>
+                                <li>Sessions adaptées aux communautés, autorités locales et forces de l'ordre</li>
+                                <li>Programmes pour les acteurs de la société civile</li>
+                                <li>Promotion d'une culture du respect des droits humains</li>
+                                <li>Outils pratiques pour la protection des droits au quotidien</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sensibilisation -->
+        <section id="sensibilisation" class="mb-5">
+            <h2 class="section-title">Sensibilisation</h2>
+            
+            <ul class="nav nav-pills mb-4" id="sensibilisationTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="ateliers-tab" data-bs-toggle="pill" data-bs-target="#ateliers" type="button">Ateliers</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="supports-tab" data-bs-toggle="pill" data-bs-target="#supports" type="button">Supports</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="campagnes-tab" data-bs-toggle="pill" data-bs-target="#campagnes" type="button">Campagnes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="education-tab" data-bs-toggle="pill" data-bs-target="#education" type="button">Éducation</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="sensibilisationTabContent">
+                <div class="tab-pane fade show active" id="ateliers" role="tabpanel">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3><i class="fas fa-users me-2"></i> Ateliers interactifs</h3>
+                            <ul>
+                                <li>Organisation d'ateliers et séminaires éducatifs pour différents groupes cibles</li>
+                                <li>Thèmes variés : changement climatique, gestion des déchets, consommation durable</li>
+                                <li>Approches pédagogiques adaptées à chaque public</li>
+                                <li>Interventions dans les écoles, entreprises et communautés</li>
+                                <li>Focus sur l'égalité des genres et la lutte contre les discriminations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="supports" role="tabpanel">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3><i class="fas fa-file-alt me-2"></i> Supports de communication</h3>
+                            <ul>
+                                <li>Développement de supports variés et accessibles</li>
+                                <li>Création d'affiches, brochures, vidéos et podcasts éducatifs</li>
+                                <li>Production d'infographies pour une compréhension visuelle</li>
+                                <li>Adaptation des messages à différents niveaux de compréhension</li>
+                                <li>Traduction dans les langues locales pour une meilleure accessibilité</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="campagnes" role="tabpanel">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3><i class="fas fa-bullhorn me-2"></i> Campagnes publiques</h3>
+                            <ul>
+                                <li>Campagnes de sensibilisation à travers les médias traditionnels</li>
+                                <li>Utilisation stratégique des réseaux sociaux pour toucher les jeunes</li>
+                                <li>Messages percutants et témoignages impactants</li>
+                                <li>Événements publics pour susciter l'engagement communautaire</li>
+                                <li>Partenariats avec des influenceurs et médias locaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="education" role="tabpanel">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3><i class="fas fa-school me-2"></i> Programmes éducatifs</h3>
+                            <ul>
+                                <li>Programmes d'éducation environnementale dans les écoles</li>
+                                <li>Formation des enseignants aux enjeux environnementaux</li>
+                                <li>Fourniture d'outils pédagogiques adaptés</li>
+                                <li>Activités pratiques pour les jeunes générations</li>
+                                <li>Organisation d'événements communautaires comme des journées de nettoyage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contactez-nous</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Nom complet</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Sujet</label>
+                                        <input type="text" class="form-control" id="subject" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">Envoyer le message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3 class="h5 mb-3">EcoDroits</h3>
+                    <p>Engagés pour la protection de l'environnement et la défense des droits humains à travers des actions concrètes et des programmes éducatifs.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h3 class="h5 mb-3">Liens rapides</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#programmes" class="text-white">Programmes</a></li>
+                        <li class="mb-2"><a href="#droits" class="text-white">Droits Humains</a></li>
+                        <li class="mb-2"><a href="#sensibilisation" class="text-white">Sensibilisation</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="h5 mb-3">Nos actions</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Reboisement</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Protection animale</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Soutien juridique</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Formations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="h5 mb-3">Contact</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Rue de l'Environnement</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> contact@ecodroits.org</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2023 EcoDroits. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">Conçu avec <i class="fas fa-heart text-danger"></i> pour la planète</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Activate the first tab in the sensibilisation section
+        var firstTab = new bootstrap.Tab(document.getElementById('ateliers-tab'));
+        firstTab.show();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+                navbar.style.transition = 'all 0.3s ease';
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
+</body>
+</html>
+
